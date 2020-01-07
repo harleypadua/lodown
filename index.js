@@ -42,7 +42,7 @@ module.exports.each = each;
   * accounting for if value is an array, object, null, or Date.
   * 
   * @param {Any Value} value: Any Value
-  * @return {Type of Value}: The string of the type of value
+  * @return {String}: The string of the type of value
   */
   
  function typeOf(value) {
@@ -61,7 +61,10 @@ module.exports.typeOf = typeOf;
 
 /**
  * first: Designed to return an array at the zeroeth element of the array, 
- * or an element starting at the beginging until the given number.
+ * or an element starting at the beginging until the given number. If the 
+ * collection passed into the function is not an array, the function returns an
+ * empty array. If no number is given or it is NaN, the first element of the 
+ * array is returned.
  * 
  * @param {Array} array: Any Array
  * @param {Number} number: Any Number
@@ -89,7 +92,10 @@ module.exports.first = first;
 
 /**
  * last: Designed to return an array at the last element of the array, 
- * or an element starting at the given number until the end of the array.
+ * or an element starting at the given number until the end of the array. If the
+ * collection passed into the function is not an array, the function returns an
+ * empty array. If no number is given or is NaN, the last element of the array
+ * is returned.
  * 
  * @param {Array} array: Any Array
  * @param {Number} number: Any Number
@@ -121,8 +127,8 @@ module.exports.last = last;
  * 
  * @param {Array} array: Any Array
  * @param {Any Value} value: Any Value
- * @return {Any Value}: Value if it is in the array
- * @return {Number}: If the value is not in the array, returns -1
+ * @return {Any Value}: Value if it is in the array, or if the value is not in
+ * the array, returns -1
  */
  
  function indexOf(array, value) {
@@ -296,7 +302,8 @@ module.exports.pluck = pluck;
 
 /**
  * every: Designed to test if all elements of an array pass a test implemented 
- * by the given function and returns a Boolean value.
+ * by the given function and returns a Boolean value. If a function is not 
+ * provided, return true if every element is truthy, else return false.
  * 
  * @param {Array} collection: Any Array
  * @param {Function} func: A Function to test the array
@@ -332,8 +339,9 @@ module.exports.every = every;
 
 
 /**
- * some: Designed to test if at least on element passes a test implemented by 
- * the given function and returns a Boolean value.
+ * some: Designed to test if at least one element passes a test implemented by 
+ * the given function and returns a Boolean value. If a function is not 
+ * provided return true if at least one element is truthy, else return false
  * 
  * @param {Array} collection: Any Array
  * @param {Function} func: A Function to check Array
@@ -368,7 +376,7 @@ module.exports.some = some;
 
 
 /**
- * reduce: Designd to reduce an array to a single value.
+ * reduce: Designed to reduce an array to a single value.
  * 
  * @param {Array} array: Any Array
  * @param {Function} func: Reducer Function to act on array
