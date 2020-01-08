@@ -127,8 +127,8 @@ module.exports.last = last;
  * 
  * @param {Array} array: Any Array
  * @param {Any Value} value: Any Value
- * @return {Any Value}: Value if it is in the array, or if the value is not in
- * the array, returns -1
+ * @return {Number}: Index of Value if it is in the array, or if the value is 
+ * not in the array, returns -1
  */
  
  function indexOf(array, value) {
